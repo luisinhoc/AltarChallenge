@@ -1,0 +1,51 @@
+
+
+<div class="dummy-card">
+  <div class="clock">
+    <div class="num num1"><div>1</div></div>
+    <div class="num num2"><div>2</div></div>
+    <div class="num num3"><div>3</div></div>
+    <div class="num num4"><div>4</div></div>
+    <div class="num num5"><div>5</div></div>
+    <div class="num num6"><div>6</div></div>
+    <div class="num num7"><div>7</div></div>
+    <div class="num num8"><div>8</div></div>
+    <div class="num num9"><div>9</div></div>
+    <div class="num num10"><div>10</div></div>
+    <div class="num num11"><div>11</div></div>
+    <div class="num num12"><div>12</div></div>
+
+    <div class="hr-hand" #hrHand></div>
+    <div class="min-hand" #minHand></div>
+    <div class="sec-hand" #secHand></div>
+  </div>
+</div>
+
+<div>
+  <input type="text" [formControl]="character" pattern="^[A-Z]$" placeholder="insert a character" maxlength="1"
+    [disabled]="true" />
+  <button type="submit" (click)="checkLetter()">Submit</button>
+  <button type="submit" (click)="algorithm()">algorithm</button>
+  <button class="default" type="submit" (click)="generateCaracter()">Generate Characters</button>
+</div>
+
+
+
+<table class="flat-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let item of matrixvalues; let j=index">{{j}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let items of matrixvalues; let i=index">
+      <td>{{i}}</td>
+      <td *ngFor="let item of items">
+        {{item}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><input type="text" disabled value="{{code}}"></p>

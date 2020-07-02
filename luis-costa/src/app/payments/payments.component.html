@@ -1,0 +1,41 @@
+<table class="flat-table">
+  <thead>
+    <tr>
+      <th scope="col">PAYMENT</th>
+      <th scope="col">AMOUNT</th>
+      <th>
+        <button type="submit" (click)="addItem()">+ ADD</button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">
+        <input type="text" [formControl]="payment" placeholder="payment description" required />
+      </td>
+      <td scope="row">
+        <input type="number" [formControl]="ammount" placeholder="ammount" required />
+      </td>
+      <td *ngIf="!disabled">Preencha todos os campos</td>
+
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+<table class="flat-table">
+  <thead>
+    <th *ngFor="let column of headers">
+      {{column}}
+    </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let column of headers">
+        {{row[column]}}
+      </td>
+      
+    </tr>
+
+  </tbody>
+</table>
